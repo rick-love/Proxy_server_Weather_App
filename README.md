@@ -9,3 +9,6 @@ heroku git:remote -a appName
 git init
 git commit -m 'pushing to heroku'
 heroku git:remote -a appName
+git push heroku main
+
+Add .env Values to Settings / Reveal Config Vars

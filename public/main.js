@@ -10,7 +10,7 @@ const fetchWeather = async (city) => {
   
   const data = await res.json()
 
-  console.log(data);
+  console.log(data.weather[0].description);
 
   if (data.cod === '404') {
     alert('City not found')
@@ -24,8 +24,10 @@ const fetchWeather = async (city) => {
 
   const displayData = {
     city: data.name,
+    
     fahrenheit: kelvinToFahrenheit(data.main.temp),
     celcius: kelvinToCelcius(data.main.temp),
+
   }
 
   addWeatherToDOM(displayData)

@@ -10,18 +10,17 @@ const fetchWeather = async (city) => {
   
   const data = await res.json()
 
-  console.log(data.weather[0].description);
-
-  if (data.cod === '404') {
+  
+  if (data.cod === '404' ) {
     alert('City not found')
     return
   }
-
+  
   if (data.cod === 401) {
     alert('Invalid API Key')
     return
   }
-
+  
   const displayData = {
     city: data.name,
     
